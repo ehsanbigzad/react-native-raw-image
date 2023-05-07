@@ -17,6 +17,6 @@ const RawImage = NativeModules.RawImage
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return RawImage.multiply(a, b);
+export function rawToPng(path: string): Promise<string | null> {
+  return RawImage.rawToPng(path);
 }
