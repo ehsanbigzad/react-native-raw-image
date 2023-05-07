@@ -1,6 +1,8 @@
 # react-native-raw-image
 
-Convert images to jpeg
+Convert raw images (.dng, .nef, .rw2, .cr2 and .arw tested) to png, only android implemented.
+
+*Personal project not recommended for production.*
 
 ## Installation
 
@@ -10,12 +12,16 @@ npm install react-native-raw-image
 
 ## Usage
 
-```js
-import { multiply } from 'react-native-raw-image';
+```ts
+rawToPng(path: string) => Promise<string | null>;
+```
 
-// ...
+```ts
+import { rawToPng } from 'react-native-raw-image';
 
-const result = await multiply(3, 7);
+rawToPng('file:///data').then(photo => {
+    // photo saved at cache folder
+});
 ```
 
 ## Contributing
